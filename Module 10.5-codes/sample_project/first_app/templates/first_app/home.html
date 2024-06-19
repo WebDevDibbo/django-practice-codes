@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is first app home page</h1>
+    <h3>Name : {{name | capfirst}}</h3>
+    <h3>Test : {{test | cut:" "}}</h3> {%comment%} it will remove all spaces {%endcomment%}
+    <h2>Value : {{val}}</h2>
+    <h3>after add : {{ val | add:"2" }}</h3>
+    <h3>Datetime : {{datetime | date:"D d M Y"}}</h3>
+    <h2>{{py | cut:'-'}}</h2>
+    <h2>{{info | dictsort:'age'}}</h2>
+    <h3>{{fruits | first}}</h3>
+    <h3>{{fruits | length}}</h3>
+    <h3>{{fruits | linenumbers}}</h3>
+    <h3>{{fruits | lower}}</h3>
+    <h4>{{'Happy coding!' | upper}}</h4>
+    <h4>{{"It's a new day" | title}}</h4>
+    <h3>{{fruits | slice:"2"}}</h3>
+    <h4>{{"You can build web apps with python and Django" | truncatewords:7}}</h4>
+    <h3>{{'<b>I</b> <button>love</button> <span>dogs</span>' | striptags}}</h3>
+    <h3>{{'Earthly' | make_list}}</h3>
+</body>
+</html>
