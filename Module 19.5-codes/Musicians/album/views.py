@@ -24,7 +24,7 @@ class EditAlbum(UpdateView):
 
 class DeleteMusician(DeleteView):
     model = models.Album
-    template_class = 'delete.html'
+    template_name = 'delete.html'
     success_url = reverse_lazy('home')
     pk_url_kwarg = 'id'
     
