@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form method='post' class='w-50 mx-auto'>
+    <h1 class='text-center mt-4 mb-4'>LogIn Form</h1>
+    {% csrf_token %}
+    <!--{{form | crispy}}-->
+    {% if form.non_field_errors%}
+    {% for er in form.non_field_errors %}
+    <p class='bg-danger text-white p-3'>{{er}}</p>
+    {% endfor %}
+    {% endif %}
+    {% for fm in  form%}
+    {{fm.label_tag}}
+    {{fm}}
+    {{fm.errors|striptags}}
+    {% endfor %}
+    <br>
+    <button class='btn btn-primary'>LogIn</button>  
+</form>
+{% endblock  %}

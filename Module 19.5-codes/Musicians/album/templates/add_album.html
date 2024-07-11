@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class='py-5 text-center'>Add Album Page</h1>
+{% load crispy_forms_tags %}
+<div class='w-50 mx-auto'>
+    <form method='POST'>
+        {% csrf_token %}
+        {{form | crispy}}
+        <button class='btn btn-primary'>Submit</button>
+    </form>
+</div>
+{% endblock  %}

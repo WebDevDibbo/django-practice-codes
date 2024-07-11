@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if messages %}
+{% for m in  messages%}
+<p class='text-center text-success mt-2'>{{m}}</p>
+{% endfor %}
+{% endif %}
+<form method='post' class='w-50 mx-auto'>
+    <h1 class='text-center mt-4 mb-4'>Registration Form</h1>
+    {% csrf_token %}
+    <!--{{form | crispy}}-->
+    {% for fm in  form%}
+    {{fm.label_tag}}
+    {{fm}}
+    {{fm.errors|striptags}}
+    {% endfor %}
+    <br>
+    <button class='btn btn-primary'>SignUp</button>  
+</form>
+{% endblock  %}
+
+{% comment %} dinesh,hash random1234 {% endcomment %}

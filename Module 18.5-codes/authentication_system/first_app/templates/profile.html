@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<p class='text-center text-info'><a class='btn btn-primary' href="{% url 'change_pass'%}">Change Your Password</a></p>
+<p class='text-center text-warning'><a class='btn btn-warning' href="{% url 'set_pass'%}">Change Your Password Without old password</a></p>
+{% if messages %}
+{% for m in  messages%}
+<h3 class='text-center text-success'>{{m}}</h3>
+{% endfor %}
+{% endif %}
+<h1 class='text-center my-3'>Profile Page</h1>
+<form method='post' class='w-50 mx-auto'>
+    {% csrf_token %}
+    <!--{{form|crispy}} -->
+    {% for fm in  form%}
+    {{fm.label_tag}}
+    {{fm}}
+    {{fm.errors|striptags}}
+    {% endfor %}
+</form>
+{% endblock  %}
