@@ -2,6 +2,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 from django import forms
 
+
 class RegistrationForm(UserCreationForm):
 
     first_name = forms.CharField(widget=forms.TextInput(attrs={'id':'required'}))
@@ -25,3 +26,5 @@ class EditUserProfile(UserChangeForm):
         self.fields['first_name'].widget.attrs['disabled'] = 'disabled'
         self.fields['last_name'].widget.attrs['disabled'] = 'disabled'
         self.fields['email'].widget.attrs['disabled'] = 'disabled'
+
+

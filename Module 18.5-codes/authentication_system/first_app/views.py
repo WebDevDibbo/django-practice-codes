@@ -34,6 +34,11 @@ def LogIn(request):
                 login(request, user)
                 messages.success(request, 'Logged in Successfully')
                 return redirect('profile')
+            else:
+                messages.warning(request, 'Invalid username or password')
+        else:
+            messages.warning(request, 'Invalid username or password')
+            
     else:
         login_form = AuthenticationForm()
     return render(request, 'login.html', {'form': login_form})
